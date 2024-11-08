@@ -1,5 +1,4 @@
 import terser from '@rollup/plugin-terser';
-import copy from 'rollup-plugin-copy';
 
 export default {
     input: 'src/index.js',
@@ -8,13 +7,6 @@ export default {
         format: 'iife'
     },
     plugins: [
-        terser(),
-        copy({
-            targets: [
-                {
-                    src: 'index.html', dest: 'dist'
-                },
-            ]
-        })
+        terser()
     ]
 }
