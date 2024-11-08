@@ -1,0 +1,11 @@
+{
+    "type": "module",
+    "scripts": {
+        "build": "npx rollup -c"
+    },
+    "devDependencies": {
+        "@rollup/plugin-terser": "^0.4.4",
+        "rollup": "^4.17.1",
+        "rollup-plugin-copy": "^3.5.0"
+    }
+}

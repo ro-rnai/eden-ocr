@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聖境傳說-文字辨識</title>
+</head>
+<body>
+    <style>
+        .row {
+            display: flex;
+        }
+        .col-l {
+            flex-basis: auto;
+            flex-grow: 0;
+            height: 100%;
+        }
+        .col {
+            flex-basis: auto;
+            flex-grow: 1;
+            height: 100%;
+        }
+        textarea {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+        }
+        html, body, .row, .col, .col-l, textarea {
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        @keyframes notetext {
+            from {opacity: 1;}
+            to {opacity: 0;}
+        }
+        .anistart {
+            opacity: 1;
+            animation-duration: 3s;
+            animation-name: notetext;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-direction: normal;
+        }
+        .hide{
+            display: none;
+        }
+        .overall{
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            margin: 0px;
+            background-color: black;
+            z-index: 100;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+        }
+        .overall canvas {
+            max-width: 100%;
+            max-height: 100%;
+            margin: auto;
+            display: block;
+        }
+    </style>
+    <div id="img-select" class="none"></div>
+    <div class="row">
+        <div class="col-l">
+            <input type="file" id="finput">
+            <div id="demo"></div>
+            <div id="toolbar" style="display: none;">
+                <button>複製圖片</button>
+                <span></span>
+            </div>
+        </div>
+        <div class="col">
+            <textarea id="t-left"></textarea>
+        </div>
+        <div class="col-l">
+            <button id="append-btn">&gt;&gt;</button>
+        </div>
+        <div class="col">
+            <textarea id="t-right"></textarea>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
